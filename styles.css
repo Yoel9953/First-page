@@ -1,0 +1,38 @@
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ===== Estilos globales ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Centramos el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Imagen de fondo (misma carpeta) */
+  background: url("fondo.jpg") center / cover no-repeat fixed;
+  color: #e0e0e0;                /* texto claro para buen contraste */
+}
+
+/* ===== Botón ===== */
+button {
+  padding: .7rem 1.2rem;
+  border: none;
+  background: #008cff;
+  color: #fff;
+  border-radius: .4rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0060c7;
+}
