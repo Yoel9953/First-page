@@ -1,0 +1,1 @@
+Querido colaborador, como pudistes ver ya hice la conexion de un servidor php y SQL, la verdad fue raro vincularlos pero ya es funcional
