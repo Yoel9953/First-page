@@ -1,38 +1,125 @@
-/* ===== Reset básico ===== */
-* {
-  box-sizing: border-box;
+/* ========== Reset básico ========== */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Poppins",sans-serif;
 }
 
-html, body {
-  height: 100%;
+/* ========== Fondo global ========== */
+body{
+  min-height:100vh;                     /* que el body siempre llene la pantalla */
+  background:url("fondo.jpg") center/cover no-repeat fixed;
 }
 
-/* ===== Estilos globales ===== */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+/* ========== Botones genéricos ========== */
+button{
+  padding:.7rem 1.2rem;
+  border:none;
+  background:#008cff;
+  color:#fff;
+  border-radius:.4rem;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.25s;
+}
+button:hover{background:#0060c7;}
 
-  /* Centramos el contenido */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Imagen de fondo (misma carpeta) */
-  background: url("fondo.jpg") center / cover no-repeat fixed;
-  color: #e0e0e0;                /* texto claro para buen contraste */
+/* ========== Contenedor padre ========== */
+.forms-wrapper{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;      /* uno encima del otro */
+  justify-content:flex-start; /* usa center si quieres centro vertical */
+  align-items:center;         /* centro horizontal */
+  gap:2rem;
+  padding:2rem 1rem;
 }
 
-/* ===== Botón ===== */
-button {
-  padding: .7rem 1.2rem;
-  border: none;
-  background: #008cff;
-  color: #fff;
-  border-radius: .4rem;
-  font-size: 1rem;
-  cursor: pointer;
+/* ========== Caja individual ========== */
+.container{
+  width:420px;
+  background:#fff;
+  padding:1.5rem 1.8rem 2rem;
+  border-radius:10px;
+  box-shadow:0 20px 35px rgba(0,0,1,.15);
 }
 
-button:hover {
-  background: #0060c7;
+/* Título del formulario */
+.form-title{
+  font-size:1.6rem;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:1.2rem;
 }
+
+/* ========== FORM & CAMPOS ========== */
+form{margin:0 1rem;}
+
+.input-group{position:relative;margin:1.1rem 0;}
+.input-group i{
+  position:absolute;
+  top:50%;left:0;
+  transform:translateY(-50%);
+  color:#000;
+}
+input{
+  width:100%;
+  padding:.6rem 0 .6rem 1.6rem;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid #757575;
+  font-size:1rem;
+  color:#000;
+}
+input:focus{
+  outline:none;
+  border-bottom:2px solid hsl(327,90%,28%);
+}
+input::placeholder{color:transparent;}
+
+/* Label flotante */
+label{
+  position:absolute;
+  left:1.6rem;top:50%;
+  transform:translateY(-50%);
+  color:#757575;
+  pointer-events:none;
+  transition:.25s;
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+  top:-1.2rem;font-size:.8rem;color:hsl(327,90%,28%);
+}
+
+/* Recover */
+.recover{text-align:right;font-size:.9rem;margin:.3rem 0 1rem;}
+.recover a{color:rgb(248,112,16);text-decoration:none;}
+.recover a:hover{color:blue;text-decoration:underline;}
+
+/* Botón grande */
+.btn{
+  width:100%;padding:.7rem 0;border:none;border-radius:5px;
+  font-size:1rem;background:rgb(239,131,15);color:#fff;cursor:pointer;transition:.3s;
+}
+.btn:hover{background:#07001f;}
+
+/* OR */
+.or{text-align:center;margin:1.2rem 0 .7rem;font-weight:600;}
+
+/* Iconos sociales */
+.icons{text-align:center;}
+.icons i{
+  font-size:1.4rem;color:rgb(250,130,10);
+  border:2px solid #dfe9f5;padding:.6rem 1.1rem;border-radius:10px;
+  margin:0 .6rem;cursor:pointer;transition:.3s;
+}
+.icons i:hover{background:#07001f;color:#fff;}
+
+/* Enlaces bajo el form */
+.links{
+  display:flex;justify-content:space-around;align-items:center;
+  margin-top:1.1rem;font-size:.95rem;font-weight:600;
+}
+.links button{background:transparent;color:rgb(94,33,237);}
+.links button:hover{color:blue;text-decoration:underline;}
